@@ -1,6 +1,5 @@
 from snake_ladder.snake_ladder_app.views.board import Board
 
-
 def test_board_generate_tiles_should_generate_tiles_with_snake_tiles_and_ladder_tiles():
     board = Board()
     board.generate_tiles()

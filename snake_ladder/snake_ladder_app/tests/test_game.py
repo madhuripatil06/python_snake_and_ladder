@@ -22,3 +22,9 @@ def test_game_add_player_should_add_given_player_to_game():
     assert game.has_given_player(bunty)
     game.add_player(Player("pinky"))
     assert not game.has_place()
+
+def test_game_is_started_should_return_true_as_soon_as_number_of_players_are_limit():
+    bunty = Player("bunty")
+    game = Game(bunty, 2)
+    game.add_player(Player("bubbly"))
+    assert game.is_started()
