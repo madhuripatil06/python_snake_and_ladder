@@ -1,8 +1,9 @@
 class Tile():
-    def __init__(self, is_snake, is_ladder):
-        self.position = {"x": 0, "y": 0}
+    def __init__(self, position, is_snake, is_ladder, destination=None):
+        self.position = position
         self.snake = is_snake
         self.ladder = is_ladder
+        self.destination = destination
 
     def is_snake(self):
         return self.snake == True
@@ -13,21 +14,9 @@ class Tile():
     def is_safe(self):
         return self.ladder == False and self.snake == False
 
-    def _add_position(self, number):
-        position = str(self.position["x"]) + ""+ str(self.position["y"])
-        position = int(position) + number
-        self.position["x"] = position/10
-        self.position["y"] = position - (self.position["x"] * 10)
-
     def increment_position(self, number):
-        self._add_position(number)
-
-    def _decrement_position(self, number):
-        position = str(self.position["x"]) + ""+ str(self.position["y"])
-        position = int(position) - number
-        self.position["x"] = position/10
-        self.position["y"] = position - (self.position["x"] * 10)
+        return self.position + number
 
     def decrement_position(self, number):
-        self._decrement_position(number)
+        return self.position - number
 
