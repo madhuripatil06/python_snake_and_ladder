@@ -1,4 +1,4 @@
-from snake_ladder.snake_ladder_app.views.board import Board
+from board import Board
 
 class Game():
     def __init__(self, player,number_of_players):
